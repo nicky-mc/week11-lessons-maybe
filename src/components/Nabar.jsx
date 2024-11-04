@@ -17,12 +17,27 @@ const Navbar = () => {
           backgroundImage: "linear-gradient(90deg, #55CDFC, #F7A8B8, #C837AB)",
         }}
       >
-        {/* Week 11 Lessons Button to open drawer */}
+        {/* Week 11 Lessons Button using DaisyUI with SVG Icon */}
         <button
           onClick={toggleDrawer}
-          className="text-xl font-bold text-white transition hover:underline"
+          className="btn btn-primary btn-md flex items-center gap-2"
         >
-          Week 11 Lessons
+          {/* SVG Icon for Menu */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+          <span>Week 11 Lessons</span>
         </button>
 
         {/* Theme Toggle */}
@@ -57,8 +72,8 @@ const Navbar = () => {
             </Link>
             <Link href="/object-orientated-programming" passHref>
               <span className="text-white hover:underline cursor-pointer">Object-Oriented Programming</span>
-                      </Link>
-                      <Link href="/another-useReducer-page" passHref>
+            </Link>
+            <Link href="/another-useReducer-page" passHref>
               <span className="text-white hover:underline cursor-pointer">Another useReducer page</span>
             </Link>
           </nav>
