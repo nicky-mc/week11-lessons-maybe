@@ -1,9 +1,10 @@
-// /app/page.js
+// src/app/another-useReducer-page/page.js
 
 "use client";
 import { useReducer, useState } from "react";
 import Modal from "@/components/Modal"; // Import Modal component
 import Image from "next/image"; // Import Next.js Image component for demonstration
+import { useTheme } from "@/context/ThemeContext"; // Import the useTheme hook
 
 // Initial state for the reducer
 const initialState = {
@@ -26,11 +27,15 @@ function reducer(state, action) {
 export default function UseReducerDemo() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { imageSize, textSize } = state;
-  const [isModalOpen, setModalOpen] = useState(null); // Track which modal to show
+  const [isModalOpen, setModalOpen] = useState(null);
 
-  // Function to open a specific modal
-  const openModal = (modalId) => setModalOpen(modalId);
-  const closeModal = () => setModalOpen(null);
+  // Access theme from ThemeContext
+  const { theme } = useTheme();
+
+  // Apply theme to the document root
+  if (typeof document !== "undefined") {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
 
   return (
     <div className={`min-h-screen p-8 flex flex-col items-center bg-gradient-to-br from-green-400 via-blue-400 to-purple-500 text-white`}>
@@ -50,7 +55,7 @@ export default function UseReducerDemo() {
             onChange={(e) => dispatch({ type: 'SET_IMAGE_SIZE', payload: Number(e.target.value) })}
             className="w-full"
           />
-          <button className="mt-2 underline" onClick={() => openModal("imageSize")}>
+          <button className="mt-2 underline" onClick={() => setModalOpen("imageSize")}>
             What is Image Size?
           </button>
         </div>
@@ -66,13 +71,13 @@ export default function UseReducerDemo() {
             onChange={(e) => dispatch({ type: 'SET_TEXT_SIZE', payload: Number(e.target.value) })}
             className="w-full"
           />
-          <button className="mt-2 underline" onClick={() => openModal("textSize")}>
+          <button className="mt-2 underline" onClick={() => setModalOpen("textSize")}>
             What is Text Size?
           </button>
         </div>
 
         {/* Additional Button for useReducer Explanation */}
-        <button className="mt-4 underline text-lg font-semibold" onClick={() => openModal("useReducer")}>
+        <button className="mt-4 underline text-lg font-semibold" onClick={() => setModalOpen("useReducer")}>
           What is useReducer?
         </button>
       </div>
@@ -101,22 +106,21 @@ export default function UseReducerDemo() {
       </div>
 
       {/* Explanation Modals with Enhanced Content */}
-      <Modal isOpen={isModalOpen === "imageSize"} onClose={closeModal} title="Image Size">
-  <p><strong>Image Size</strong> refers to the dimensions of an image displayed on the screen, usually measured in pixels. Adjusting the image size dynamically helps improve user experience by ensuring images are appropriately scaled across devices and screen sizes.</p>
-  <p><strong>Real-World Application:</strong> In e-commerce, product images often have different size requirements depending on where they&apos;re shown (e.g., thumbnail vs. full view). Dynamically managing image sizes through a reducer is an efficient way to adjust image dimensions based on the user&apos;s actions or screen size.</p>
-</Modal>
-
-<Modal isOpen={isModalOpen === "textSize"} onClose={closeModal} title="Text Size">
-  <p><strong>Text Size</strong> controls the font size of text elements, affecting readability and design aesthetics. Adjusting text size is crucial for accessibility, especially for users with visual impairments who need larger fonts.</p>
-  <p><strong>Real-World Application:</strong> News websites and blogs often let users control text size for readability. A <code>useReducer</code> setup allows an app to adjust text size across various sections seamlessly, enhancing accessibility and user control.</p>
-</Modal>
-
-<Modal isOpen={isModalOpen === "useReducer"} onClose={closeModal} title="What is useReducer?">
-  <p><strong>useReducer</strong> is a React hook that allows for more complex state management compared to <code>useState</code>. It is ideal for situations where the state logic involves multiple sub-values or where the state transitions depend on specific actions.</p>
-  <p><strong>How it Works:</strong> <code>useReducer</code> accepts two arguments: a reducer function and an initial state. The reducer function receives the current state and an action, and based on the action type, it returns a new state. This setup enables you to centralize all state transitions, making the code more predictable and easier to debug.</p>
-  <p><strong>Real-World Applications:</strong> In larger applications, <code>useReducer</code> can manage complex forms, handle multiple related state values, or even replace libraries like Redux for local component state. For instance, in an online shopping cart, <code>useReducer</code> can handle adding, removing, and updating items, each as a distinct action within the reducer function.</p>
-</Modal>
-
+      <Modal isOpen={isModalOpen === "imageSize"} onClose={() => setModalOpen(null)} title="Image Size">
+        <p><strong>Image Size</strong> refers to the dimensions of an image displayed on the screen, usually measured in pixels. Adjusting the image size dynamically helps improve user experience by ensuring images are appropriately scaled across devices and screen sizes.</p>
+        <p><strong>Real-World Application:</strong> In e-commerce, product images often have different size requirements depending on where they&apos;re shown (e.g., thumbnail vs. full view). Dynamically managing image sizes through a reducer is an efficient way to adjust image dimensions based on the user&apos;s actions or screen size.</p>
+      </Modal>
+      
+      <Modal isOpen={isModalOpen === "textSize"} onClose={() => setModalOpen(null)} title="Text Size">
+        <p><strong>Text Size</strong> controls the font size of text elements, affecting readability and design aesthetics. Adjusting text size is crucial for accessibility, especially for users with visual impairments who need larger fonts.</p>
+        <p><strong>Real-World Application:</strong> News websites and blogs often let users control text size for readability. A <code>useReducer</code> setup allows an app to adjust text size across various sections seamlessly, enhancing accessibility and user control.</p>
+      </Modal>
+      
+      <Modal isOpen={isModalOpen === "useReducer"} onClose={() => setModalOpen(null)} title="What is useReducer?">
+        <p><strong>useReducer</strong> is a React hook that allows for more complex state management compared to <code>useState</code>. It is ideal for situations where the state logic involves multiple sub-values or where the state transitions depend on specific actions.</p>
+        <p><strong>How it Works:</strong> <code>useReducer</code> accepts two arguments: a reducer function and an initial state. The reducer function receives the current state and an action, and based on the action type, it returns a new state. This setup enables you to centralize all state transitions, making the code more predictable and easier to debug.</p>
+        <p><strong>Real-World Applications:</strong> In larger applications, <code>useReducer</code> can manage complex forms, handle multiple related state values, or even replace libraries like Redux for local component state. For instance, in an online shopping cart, <code>useReducer</code> can handle adding, removing, and updating items, each as a distinct action within the reducer function.</p>
+      </Modal>
     </div>
   );
 }
