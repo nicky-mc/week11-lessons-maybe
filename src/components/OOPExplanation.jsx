@@ -13,7 +13,7 @@ const OOPExplanation = () => {
   return (
     <div className="p-8 bg-base-200 rounded-lg shadow-lg">
       {/* Main heading */}
-      <h1 className="text-4xl font-bold mb-6 text-primary">Object-Oriented Programming (OOP) Concepts in Web Development</h1>
+      <h1 className="text-4xl font-bold mb-6 text-primary">Object-Oriented Programming (OOP) Concepts in Web Development p.s click on the images</h1>
 
       {/* Introductory alert */}
       <div className="alert alert-info shadow-lg mb-8">
