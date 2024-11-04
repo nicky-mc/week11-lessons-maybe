@@ -1,101 +1,103 @@
+// app/page.js
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="min-h-screen p-8 pb-20 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
+          className="rounded-full border-4 border-white shadow-lg"
+          src="/web.jpg"
+          alt="Circular Image"
           width={180}
-          height={38}
+          height={180}
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <div className="mt-8 w-full max-w-2xl">
+          {/* useReducer Accordion */}
+          <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-4">
+            <input type="checkbox" />
+            <div className="collapse-title text-xl font-medium">
+              Complex state with useReducer
+            </div>
+            <div className="collapse-content">
+              <p>
+                <strong>useReducer</strong> is a React hook that helps you manage
+                more complex state logic in your application. Unlike useState, which
+                is more suited for simple state updates, useReducer allows you to handle
+                state transitions based on an action and a reducer function, making it
+                ideal for scenarios where state has multiple sub-values or needs specific
+                logic for transitions.
+              </p>
+              <p>
+                A reducer function takes the current state and an action as arguments
+                and returns a new state. This hook is particularly useful for form data,
+                complex component interactions, and scenarios where actions and state
+                updates are interdependent. In essence, it is inspired by Redux but is
+                built into React, making it a lightweight option for managing complex
+                local component state.
+              </p>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* OOP Accordion */}
+          <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-4">
+            <input type="checkbox" />
+            <div className="collapse-title text-xl font-medium">
+              Classes and Inheritance (OOP)
+            </div>
+            <div className="collapse-content">
+              <p>
+                <strong>Object-Oriented Programming (OOP)</strong> is a paradigm that
+                organizes code by grouping related data and behaviors into "objects." Each
+                object can represent a real-world entity, with properties (data) and
+                methods (functions) to operate on that data. This organization allows for
+                code that is reusable, extensible, and easy to maintain.
+              </p>
+              <p>
+                Inheritance, a key concept in OOP, allows one class (called a child or
+                subclass) to inherit properties and methods from another class (called a
+                parent or superclass). This helps reduce code duplication by allowing
+                shared functionality to be defined once in the parent class. JavaScript
+                supports OOP principles and is well-suited for building complex
+                applications, allowing developers to use classes to structure code in a
+                clear, modular way.
+              </p>
+            </div>
+          </div>
+
+          {/* React Context Accordion */}
+          <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-4">
+            <input type="checkbox" />
+            <div className="collapse-title text-xl font-medium">
+              Context: Avoiding Prop Drilling
+            </div>
+            <div className="collapse-content">
+              <p>
+                As your application grows, passing data through components as props can
+                lead to a practice known as <strong>"prop drilling"</strong> – where data is
+                passed through several components, even if only a deeply nested component
+                needs it. This can make code harder to maintain and understand.
+              </p>
+              <p>
+                <strong>React Context</strong> provides a solution by allowing you to share
+                data and functions across the component tree without the need for prop
+                drilling. You can create a context to store values (like theme settings,
+                user info, or configurations) and provide those values to any component
+                in your application that needs them, without having to pass them explicitly
+                through each layer of components.
+              </p>
+              <p>
+                While Context can seem magical, it’s essentially a centralized way of
+                managing and distributing data across your app. Learning to use Context
+                effectively will help simplify your component structure, organize
+                functionality in one place, and make your codebase easier to maintain.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
