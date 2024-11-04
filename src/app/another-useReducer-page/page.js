@@ -102,20 +102,21 @@ export default function UseReducerDemo() {
 
       {/* Explanation Modals with Enhanced Content */}
       <Modal isOpen={isModalOpen === "imageSize"} onClose={closeModal} title="Image Size">
-        <p><strong>Image Size</strong> refers to the dimensions of an image displayed on the screen, usually measured in pixels. Adjusting the image size dynamically helps improve user experience by ensuring images are appropriately scaled across devices and screen sizes.</p>
-        <p><strong>Real-World Application:</strong> In e-commerce, product images often have different size requirements depending on where they're shown (e.g., thumbnail vs. full view). Dynamically managing image sizes through a reducer is an efficient way to adjust image dimensions based on the user's actions or screen size.</p>
-      </Modal>
-      
-      <Modal isOpen={isModalOpen === "textSize"} onClose={closeModal} title="Text Size">
-        <p><strong>Text Size</strong> controls the font size of text elements, affecting readability and design aesthetics. Adjusting text size is crucial for accessibility, especially for users with visual impairments who need larger fonts.</p>
-        <p><strong>Real-World Application:</strong> News websites and blogs often let users control text size for readability. A `useReducer` setup allows an app to adjust text size across various sections seamlessly, enhancing accessibility and user control.</p>
-      </Modal>
-      
-      <Modal isOpen={isModalOpen === "useReducer"} onClose={closeModal} title="What is useReducer?">
-        <p><strong>useReducer</strong> is a React hook that allows for more complex state management compared to `useState`. It is ideal for situations where the state logic involves multiple sub-values or where the state transitions depend on specific actions.</p>
-        <p><strong>How it Works:</strong> `useReducer` accepts two arguments: a reducer function and an initial state. The reducer function receives the current state and an action, and based on the action type, it returns a new state. This setup enables you to centralize all state transitions, making the code more predictable and easier to debug.</p>
-        <p><strong>Real-World Applications:</strong> In larger applications, `useReducer` can manage complex forms, handle multiple related state values, or even replace libraries like Redux for local component state. For instance, in an online shopping cart, `useReducer` can handle adding, removing, and updating items, each as a distinct action within the reducer function.</p>
-      </Modal>
+  <p><strong>Image Size</strong> refers to the dimensions of an image displayed on the screen, usually measured in pixels. Adjusting the image size dynamically helps improve user experience by ensuring images are appropriately scaled across devices and screen sizes.</p>
+  <p><strong>Real-World Application:</strong> In e-commerce, product images often have different size requirements depending on where they&apos;re shown (e.g., thumbnail vs. full view). Dynamically managing image sizes through a reducer is an efficient way to adjust image dimensions based on the user&apos;s actions or screen size.</p>
+</Modal>
+
+<Modal isOpen={isModalOpen === "textSize"} onClose={closeModal} title="Text Size">
+  <p><strong>Text Size</strong> controls the font size of text elements, affecting readability and design aesthetics. Adjusting text size is crucial for accessibility, especially for users with visual impairments who need larger fonts.</p>
+  <p><strong>Real-World Application:</strong> News websites and blogs often let users control text size for readability. A <code>useReducer</code> setup allows an app to adjust text size across various sections seamlessly, enhancing accessibility and user control.</p>
+</Modal>
+
+<Modal isOpen={isModalOpen === "useReducer"} onClose={closeModal} title="What is useReducer?">
+  <p><strong>useReducer</strong> is a React hook that allows for more complex state management compared to <code>useState</code>. It is ideal for situations where the state logic involves multiple sub-values or where the state transitions depend on specific actions.</p>
+  <p><strong>How it Works:</strong> <code>useReducer</code> accepts two arguments: a reducer function and an initial state. The reducer function receives the current state and an action, and based on the action type, it returns a new state. This setup enables you to centralize all state transitions, making the code more predictable and easier to debug.</p>
+  <p><strong>Real-World Applications:</strong> In larger applications, <code>useReducer</code> can manage complex forms, handle multiple related state values, or even replace libraries like Redux for local component state. For instance, in an online shopping cart, <code>useReducer</code> can handle adding, removing, and updating items, each as a distinct action within the reducer function.</p>
+</Modal>
+
     </div>
   );
 }
