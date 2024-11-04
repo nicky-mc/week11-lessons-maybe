@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -45,18 +46,18 @@ const Navbar = () => {
         >
           <h2 className="text-2xl font-semibold mb-4">Navigation</h2>
           <nav className="flex flex-col space-y-4">
-            <a href="/" className="text-white hover:underline">
-              Home
-            </a>
-            <a href="/useReducer" className="text-white hover:underline">
-              useReducer
-            </a>
-            <a href="/passing-data-deeply-with-context" className="text-white hover:underline">
-              Passing Data Deeply with Context
-            </a>
-            <a href="/object-orientated-programming" className="text-white hover:underline">
-              Object-Oriented Programming
-            </a>
+            <Link href="/" passHref>
+              <span className="text-white hover:underline cursor-pointer">Home</span>
+            </Link>
+            <Link href="/useReducer" passHref>
+              <span className="text-white hover:underline cursor-pointer">useReducer</span>
+            </Link>
+            <Link href="/passing-data-deeply-with-context" passHref>
+              <span className="text-white hover:underline cursor-pointer">Passing Data Deeply with Context</span>
+            </Link>
+            <Link href="/object-orientated-programming" passHref>
+              <span className="text-white hover:underline cursor-pointer">Object-Oriented Programming</span>
+            </Link>
           </nav>
           <button
             onClick={toggleDrawer}

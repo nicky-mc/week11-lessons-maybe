@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from 'react';
 import { places } from './data.js';
 import { getImageUrl } from './utils.js';
 import { ImageSizeContext } from './context.js';
+import Image from 'next/image';
 
 export default function App() {
   const [isLarge, setIsLarge] = useState(false);
@@ -77,7 +78,7 @@ function Place({ place }) {
 function PlaceImage({ place }) {
   const imageSize = useContext(ImageSizeContext);
   return (
-    <img
+    <Image
       src={getImageUrl(place)}
       alt={place.name}
       width={imageSize}
