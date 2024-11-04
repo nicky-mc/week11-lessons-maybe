@@ -10,8 +10,8 @@ export default function Home() {
           className="rounded-full border-4 border-white shadow-lg"
           src="/web.jpg"
           alt="Circular Image"
-          width={180}
-          height={180}
+          width={580}
+          height={580}
           priority
         />
         <div className="mt-8 w-full max-w-2xl">
