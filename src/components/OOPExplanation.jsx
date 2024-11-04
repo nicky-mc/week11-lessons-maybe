@@ -93,7 +93,7 @@ const OOPExplanation = () => {
             Encapsulation
           </h2>
           <p>
-            <strong>Encapsulation</strong> restricts direct access to an object’s internal state, allowing controlled access only through methods. This prevents unintended interference and maintains a clear interface between the object's inner workings and its public interactions.
+            <strong>Encapsulation</strong> restricts direct access to an object’s internal state, allowing controlled access only through methods. This prevents unintended interference and maintains a clear interface between the object`&apos;s inner workings and its public interactions.
           </p>
           <p className="mt-2">
             <strong>Usage in Web Development:</strong> In JavaScript, encapsulation can be achieved using closures or private properties (like `#` in ES6). For example, an encapsulated `APIService` class can handle API requests internally while exposing only specific methods like `getData()` and `postData()`. This protects sensitive data or logic from being accessed or modified from outside, improving code reliability and security.
