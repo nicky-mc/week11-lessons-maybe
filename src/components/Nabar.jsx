@@ -57,6 +57,9 @@ const Navbar = () => {
             </Link>
             <Link href="/object-orientated-programming" passHref>
               <span className="text-white hover:underline cursor-pointer">Object-Oriented Programming</span>
+                      </Link>
+                      <Link href="/another-useReducer-page" passHref>
+              <span className="text-white hover:underline cursor-pointer">Another useReducer page</span>
             </Link>
           </nav>
           <button
