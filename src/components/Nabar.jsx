@@ -79,7 +79,7 @@ const Navbar = () => {
             <Link href="/weapon-Demo" passHref>
               <span className="text-white hover:underline cursor-pointer">Weapon Demo</span>
             </Link>
-            <Link href="/pokemon" passHref>
+            <Link href="/pokédex" passHref>
               <span className="text-white hover:underline cursor-pointer">Pokédex</span>
             </Link>
           </nav>
