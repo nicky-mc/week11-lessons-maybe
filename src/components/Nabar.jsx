@@ -7,7 +7,10 @@ import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+    console.log(isDrawerOpen); // Debugging state
+  };
 
   return (
     <>
@@ -76,7 +79,9 @@ const Navbar = () => {
             <Link href="/weapon-Demo" passHref>
               <span className="text-white hover:underline cursor-pointer">Weapon Demo</span>
             </Link>
-            
+            <Link href="/pokemon" passHref>
+              <span className="text-white hover:underline cursor-pointer">Pokédex</span>
+            </Link>
           </nav>
           <button
             onClick={toggleDrawer}
