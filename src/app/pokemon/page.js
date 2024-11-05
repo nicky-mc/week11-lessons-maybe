@@ -102,7 +102,11 @@ export default function PokemonFetch() {
               <div className="card-body">
                 <h2 className="card-title">{post.name}</h2>
                 <p>Type: {post.types.map((typeInfo) => typeInfo.type.name).join(", ")}</p>
-                <img src={post.sprites.front_default} alt={post.name} className="w-24 h-24 mx-auto" />
+                <img 
+                  src={post.sprites.other.dream_world.front_default || post.sprites.other['official-artwork'].front_default} 
+                  alt={post.name} 
+                  className="w-24 h-24 mx-auto" 
+                />
               </div>
             </div>
           </Link>
