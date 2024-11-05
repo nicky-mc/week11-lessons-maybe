@@ -70,6 +70,9 @@ const Navbar = () => {
             <Link href="/useReducer" passHref>
               <span className="text-white hover:underline cursor-pointer">useReducer</span>
             </Link>
+            <Link href="/another-use-reducer-page" passHref>
+              <span className="text-white hover:underline cursor-pointer">useReducer 2 the sizening</span>
+            </Link>
             <Link href="/passing-data-deeply-with-context" passHref>
               <span className="text-white hover:underline cursor-pointer">Passing Data Deeply with Context</span>
             </Link>
