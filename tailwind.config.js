@@ -8,7 +8,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        flash: "flash 0.5s ease-in-out",
+      },
+      keyframes: {
+        flash: {
+          "0%, 100%": { backgroundColor: "transparent" },
+          "50%": { backgroundColor: "rgba(255, 215, 0, 0.5)" }, // Gold flash
+        },
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {
