@@ -33,7 +33,7 @@ async function fetchPokemonDetails(pokemonNames) {
             return await res.json();
           } catch (error) {
             attempts++;
-            if (attempts >= RETRY_LIMIT) return null;
+            if (attempts >= RETRY_LIMIT) return null; // Failed after retries
           }
         }
       })
@@ -85,18 +85,18 @@ export default function PokemonFetch() {
       </Head>
       <h1 className="text-3xl font-bold text-center mb-4">Who do you choose?</h1>
       <div className="flex justify-center gap-2 mb-4 overflow-x-auto">
-  <div className="flex space-x-2">
-    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((gen) => (
-      <button
-        key={gen}
-        onClick={() => handleGenerationChange(gen)}
-        className={`btn btn-sm md:btn-md ${generation === gen ? "btn-active" : "btn-outline"}`}
-      >
-        Gen {gen}
-      </button>
-    ))}
-  </div>
-</div>
+        <div className="flex space-x-2">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((gen) => (
+            <button
+              key={gen}
+              onClick={() => handleGenerationChange(gen)}
+              className={`btn btn-sm md:btn-md ${generation === gen ? "btn-active" : "btn-outline"}`}
+            >
+              Gen {gen}
+            </button>
+          ))}
+        </div>
+      </div>
       <SearchBar onSearch={handleSearch} />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {filteredPosts.map((post) => (

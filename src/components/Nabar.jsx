@@ -1,5 +1,5 @@
-// src/components/Navbar.jsx
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
-    console.log(isDrawerOpen); // Debugging state
   };
 
   return (
@@ -20,12 +19,12 @@ const Navbar = () => {
           backgroundImage: "linear-gradient(90deg, #55CDFC, #F7A8B8, #C837AB)",
         }}
       >
-        {/* Week 11 Lessons Button using DaisyUI with SVG Icon */}
+        {/* Button to toggle drawer */}
         <button
           onClick={toggleDrawer}
           className="btn btn-primary btn-md flex items-center gap-2"
         >
-          {/* SVG Icon for Menu */}
+          {/* Menu Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -40,7 +39,7 @@ const Navbar = () => {
               d="M4 6h16M4 12h16m-7 6h7"
             />
           </svg>
-          <span>Week 11 Lessons</span>
+          <span>Menu</span>
         </button>
 
         {/* Theme Toggle */}
@@ -71,10 +70,10 @@ const Navbar = () => {
               <span className="text-white hover:underline cursor-pointer">useReducer</span>
             </Link>
             <Link href="/another-use-reducer-page" passHref>
-              <span className="text-white hover:underline cursor-pointer">useReducer 2 the sizening</span>
+              <span className="text-white hover:underline cursor-pointer">useReducer 2</span>
             </Link>
             <Link href="/passing-data-deeply-with-context" passHref>
-              <span className="text-white hover:underline cursor-pointer">Passing Data Deeply with Context</span>
+              <span className="text-white hover:underline cursor-pointer">Passing Data Deeply</span>
             </Link>
             <Link href="/object-orientated-programming" passHref>
               <span className="text-white hover:underline cursor-pointer">Object-Oriented Programming</span>
@@ -82,7 +81,7 @@ const Navbar = () => {
             <Link href="/weapon-Demo" passHref>
               <span className="text-white hover:underline cursor-pointer">Weapon Demo</span>
             </Link>
-            <Link href="/pokédex" passHref>
+            <Link href="/pokemon" passHref>
               <span className="text-white hover:underline cursor-pointer">Pokédex</span>
             </Link>
             <Link href="/pathfinder-pc-generator" passHref>
@@ -98,7 +97,7 @@ const Navbar = () => {
         </aside>
       </nav>
 
-      {/* Conditionally apply width on main content */}
+      {/* Main content margin adjustment based on drawer state */}
       <style jsx global>{`
         main {
           transition: margin-left 0.3s ease;
