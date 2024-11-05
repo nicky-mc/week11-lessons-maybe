@@ -73,9 +73,10 @@ const Navbar = () => {
             <Link href="/object-orientated-programming" passHref>
               <span className="text-white hover:underline cursor-pointer">Object-Oriented Programming</span>
             </Link>
-            <Link href="/another-useReducer-page" passHref>
-              <span className="text-white hover:underline cursor-pointer">Another useReducer page</span>
+            <Link href="/weapon-Demo" passHref>
+              <span className="text-white hover:underline cursor-pointer">Weapon Demo</span>
             </Link>
+            
           </nav>
           <button
             onClick={toggleDrawer}
