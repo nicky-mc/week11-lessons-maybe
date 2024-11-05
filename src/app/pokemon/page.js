@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import SearchBar from "@/components/SearchBar";
 
 const CONCURRENT_REQUESTS = 450;
@@ -102,9 +103,11 @@ export default function PokemonFetch() {
               <div className="card-body">
                 <h2 className="card-title">{post.name}</h2>
                 <p>Type: {post.types.map((typeInfo) => typeInfo.type.name).join(", ")}</p>
-                <img 
-                  src={post.sprites.other.dream_world.front_default || post.sprites.other['official-artwork'].front_default} 
+                <Image 
+                  src={post.sprites.other['official-artwork'].front_default || post.sprites.other.dream_world.front_default} 
                   alt={post.name} 
+                  width={96} 
+                  height={96} 
                   className="w-24 h-24 mx-auto" 
                 />
               </div>
