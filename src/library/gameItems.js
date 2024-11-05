@@ -60,8 +60,9 @@ class GameItem {
   
   // Spell class extending GameItem for spells
   class Spell extends GameItem {
-    constructor(name, description, imageUrl, manaCost, effect) {
+    constructor(name, description, imageUrl, damage, manaCost, effect) {
       super(name, description, imageUrl);
+      this.damage = damage;  // Adding damage to Spell class
       this.manaCost = manaCost;
       this.effect = effect;
     }
@@ -141,20 +142,17 @@ class GameItem {
     }
   }
   
-  // Specific spell classes with Unsplash image URLs
+  // Specific spell classes with damage values
   class Fireball extends Spell {
     constructor() {
       super(
         "Fireball",
         "A fiery blast that engulfs enemies.",
         "/images/fireball.jpg",
-        15,
+        20,       // Damage value for Fireball
+        15,       // Mana cost for Fireball
         "explosive fire damage"
       );
-    }
-  
-    cast() {
-      return `Casting ${this.name} for ${this.effect} (Costs ${this.manaCost} mana)`;
     }
   }
   
@@ -164,13 +162,10 @@ class GameItem {
         "Ice Shard",
         "A sharp shard of ice that pierces armor.",
         "/images/iceshard.jpeg",
-        12,
+        15,       // Damage value for Ice Shard
+        12,       // Mana cost for Ice Shard
         "piercing ice damage"
       );
-    }
-  
-    cast() {
-      return `Casting ${this.name} for ${this.effect} (Costs ${this.manaCost} mana)`;
     }
   }
   
