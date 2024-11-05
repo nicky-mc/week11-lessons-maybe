@@ -95,9 +95,8 @@ const Navbar = () => {
       {/* Conditionally apply width on main content */}
       <style jsx global>{`
         main {
-          max-width: ${isDrawerOpen ? "66%" : "100%"};
-          margin-left: auto;
-          margin-right: auto;
+          transition: margin-left 0.3s ease;
+          margin-left: ${isDrawerOpen ? "16rem" : "0"};
         }
       `}</style>
     </>

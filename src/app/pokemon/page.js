@@ -84,17 +84,19 @@ export default function PokemonFetch() {
         <title>Pokémon Explorer</title>
       </Head>
       <h1 className="text-3xl font-bold text-center mb-4">Who do you choose?</h1>
-      <div className="flex justify-center gap-2 mb-4">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((gen) => (
-          <button
-            key={gen}
-            onClick={() => handleGenerationChange(gen)}
-            className={`btn ${generation === gen ? "btn-active" : "btn-outline"}`}
-          >
-            Generation {gen}
-          </button>
-        ))}
-      </div>
+      <div className="flex justify-center gap-2 mb-4 overflow-x-auto">
+  <div className="flex space-x-2">
+    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((gen) => (
+      <button
+        key={gen}
+        onClick={() => handleGenerationChange(gen)}
+        className={`btn btn-sm md:btn-md ${generation === gen ? "btn-active" : "btn-outline"}`}
+      >
+        Gen {gen}
+      </button>
+    ))}
+  </div>
+</div>
       <SearchBar onSearch={handleSearch} />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {filteredPosts.map((post) => (
