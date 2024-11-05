@@ -82,6 +82,9 @@ const Navbar = () => {
             <Link href="/pokédex" passHref>
               <span className="text-white hover:underline cursor-pointer">Pokédex</span>
             </Link>
+            <Link href="/pathfinder-pc-generator" passHref>
+              <span className="text-white hover:underline cursor-pointer">Pathfinder Character Creator</span>
+            </Link>
           </nav>
           <button
             onClick={toggleDrawer}

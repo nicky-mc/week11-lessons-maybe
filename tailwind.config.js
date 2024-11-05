@@ -18,6 +18,18 @@ export default {
           "50%": { backgroundColor: "rgba(255, 215, 0, 0.5)" }, // Gold flash
         },
       },
+      fontFamily: {
+        fantasy: ["Cinzel", "serif"], // Medieval-style font
+      },
+      colors: {
+        parchment: "#fef7e3",
+        darkBrown: "#4b2e19",
+        deepGold: "#c19a6b",
+        burntRed: "#7b3e19",
+      },
+      boxShadow: {
+        innerGlow: "inset 0 0 10px rgba(0, 0, 0, 0.7)",
+      },
     },
   },
   plugins: [daisyui],
@@ -68,6 +80,17 @@ export default {
           warning: "#fbbd08",
           error: "#ff4444",
         },
+          pathfinder: {
+            primary: "#c19a6b",        // Deep gold for primary accents
+            secondary: "#4b2e19",      // Dark brown for secondary
+            accent: "#7b3e19",         // Burnt red for accent
+            neutral: "#333333",        // Dark neutral background
+            "base-100": "#fef7e3",     // Light parchment color for main background
+            info: "#2094f3",
+            success: "#00c851",
+            warning: "#ffbb33",
+            error: "#ff4444",
+          },
       },
     ],
   },
