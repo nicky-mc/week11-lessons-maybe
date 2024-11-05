@@ -169,6 +169,17 @@ export default async function PokemonDetail({ params }) {
       <div className="card lg:w-3/4 bg-base-100 shadow-xl">
         <div className="p-10">
           {/* Display main image versions at the top */}
+          <figure className="w-full flex justify-center mb-8">
+            <Image 
+              src={pokemon.sprites.other['official-artwork'].front_default} 
+              alt={`${pokemon.name} - Official Artwork`} 
+              width={400} 
+              height={400} 
+              className="rounded-lg"
+            />
+          </figure>
+
+          {/* Display other images */}
           <figure className="w-full grid grid-cols-2 sm:grid-cols-3 gap-6 justify-center mb-8">
             {spriteSets.map((sprite) =>
               sprite.src ? (
@@ -176,8 +187,8 @@ export default async function PokemonDetail({ params }) {
                   <Image 
                     src={sprite.src} 
                     alt={`${pokemon.name} - ${sprite.label}`} 
-                    width={200} 
-                    height={200} 
+                    width={100} 
+                    height={100} 
                     className="rounded-lg"
                   />
                   <p className="text-sm mt-2">{sprite.label}</p>
@@ -246,6 +257,7 @@ export default async function PokemonDetail({ params }) {
                   </div>
                 ))}
               </div>
+           
             </div>
           </div>
         </div>
