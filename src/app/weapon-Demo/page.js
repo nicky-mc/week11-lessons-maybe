@@ -28,6 +28,9 @@ const WeaponDemo = () => {
     setFlash(true);
     setTimeout(() => setFlash(false), 300); // Reset flash after 300ms
     setLog((prevLog) => [...prevLog, result]);
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
