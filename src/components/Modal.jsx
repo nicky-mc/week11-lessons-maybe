@@ -1,4 +1,4 @@
-// /components/Modal.js
+// /components/Modal.jsx
 
 import React from 'react';
 
